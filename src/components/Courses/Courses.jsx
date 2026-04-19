@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight, Clock, Star } from 'lucide-react';
 import styles from './Courses.module.scss';
 import basicImg from '../../assets/course-basic.png';
 import advancedImg from '../../assets/course-advanced.png';
+import softwareImg from '../../assets/course-software.png';
 
 const Courses = ({ onEnrollClick }) => {
   const courses = [
@@ -26,7 +27,7 @@ const Courses = ({ onEnrollClick }) => {
     {
       title: "Smartphone Software Training",
       description: "Flashing, unlocking, dead boot repair, and FRP bypass for all major Android & iOS devices.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+      image: softwareImg,
       duration: "30 Days",
       level: "Intermediate",
       popular: false
@@ -70,7 +71,6 @@ const Courses = ({ onEnrollClick }) => {
               <div className={styles.imageBox}>
                 <img src={course.image} alt={course.title} />
                 <div className={styles.badges}>
-                  <span className={styles.duration}><Clock size={12} /> {course.duration}</span>
                   <span className={styles.level}>{course.level}</span>
                 </div>
               </div>

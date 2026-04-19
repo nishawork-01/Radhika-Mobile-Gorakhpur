@@ -2,7 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Building2 } from 'lucide-react';
 import styles from './About.module.scss';
-import aboutImg from '../../assets/about.png';
+import aboutImg1 from '../../assets/about1.png';
+import aboutImg2 from '../../assets/about2.png';
+import aboutImg3 from '../../assets/about3.png';
+import aboutImg4 from '../../assets/about4.png';
 
 const About = () => {
   const features = [
@@ -17,13 +20,18 @@ const About = () => {
       <div className="container">
         <div className={styles.grid}>
           <motion.div 
-            className={styles.imageWrapper}
+            className={styles.imageGridWrapper}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img src={aboutImg} alt="About Radhika Mobile Institute" />
+            <div className={styles.imageGrid}>
+              <img src={aboutImg1} alt="Training Lab 1" className={styles.img1} />
+              <img src={aboutImg2} alt="Training Lab 2" className={styles.img2} />
+              <img src={aboutImg3} alt="Training Lab 3" className={styles.img3} />
+              <img src={aboutImg4} alt="Training Lab 4" className={styles.img4} />
+            </div>
             <div className={styles.experienceBadge}>
               <span>18+</span>
               <p>Years of Expertise</p>
