@@ -48,7 +48,7 @@ const Header = ({ onEnrollClick, onLogout }) => {
               ) : (
                 <div className={styles.logoPlaceholder}>RM</div>
               )}
-              <span>Radhika Mobile</span>
+              <span>Radhika Mobile Gorakhpur</span>
             </div>
 
             <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>

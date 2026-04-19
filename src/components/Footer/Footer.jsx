@@ -11,7 +11,7 @@ const Footer = () => {
           <div className={styles.brand}>
             <div className={styles.logo}>
               <img src={logo} alt="Radhika Mobile Logo" />
-              <span>Radhika Mobile</span>
+              <span>Radhika Mobile Gorakhpur</span>
             </div>
             <p>
               Leading technical training institute in Gorakhpur. Empowering the next 
