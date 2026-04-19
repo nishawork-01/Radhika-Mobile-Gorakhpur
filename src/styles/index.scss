@@ -1,0 +1,226 @@
+@use 'variables' as *;
+@use "sass:color";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  color: $text-dark;
+  background-color: $white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headings;
+  font-weight: 700;
+  color: $primary-dark-blue;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, $accent-gold 0%, #e6b800 100%);
+  color: $primary-dark-blue;
+  padding: 12px 28px;
+  border-radius: $radius-sm;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.35);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+section {
+  padding: $spacing-xl 0;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 2rem;
+    }
+  }
+  
+  p {
+    color: $text-muted;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Selection Color
+::selection {
+  background: rgba($accent-gold, 0.3);
+  color: $primary-dark-blue;
+}
+
+// Scrollbar Styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $primary-dark-blue, #1a4a7a);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-dark-blue;
+}
+
+// Floating WhatsApp Button
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: whatsappPulse 2s ease-in-out infinite;
+  
+  &:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+    animation: none;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 20px;
+    left: 20px;
+    width: 52px;
+    height: 52px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+}
+
+// Scroll to Top Button
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, $primary-dark-blue, #1a4a7a);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: $accent-gold;
+    color: $primary-dark-blue;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}

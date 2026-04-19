@@ -1,0 +1,203 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+  &.scrolled {
+    .topBar {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+    
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: $shadow-soft;
+      padding: 10px 0;
+    }
+  }
+}
+
+.topBar {
+  background-color: $primary-dark-blue;
+  color: $white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  
+  .topBarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contactInfo {
+    display: flex;
+    gap: 20px;
+    
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      
+      &:hover {
+        opacity: 1;
+        color: $accent-gold;
+      }
+    }
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 15px;
+    
+    a {
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+        color: $accent-gold;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.navbar {
+  background: transparent;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  
+  .navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .logoPlaceholder {
+    width: 40px;
+    height: 40px;
+    background: $primary-dark-blue;
+    color: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  
+  span {
+    font-family: $font-headings;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $primary-dark-blue;
+  }
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  
+  li a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: $text-dark;
+    
+    &:hover {
+      color: $accent-gold;
+    }
+  }
+  
+  .mobileCTA {
+    display: none;
+  }
+
+  .authLi {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    .userName {
+      font-weight: 500;
+      color: $primary-dark-blue;
+      font-size: 0.9rem;
+    }
+    
+    .logoutBtn {
+      background: none;
+      border: 1px solid rgba($primary-dark-blue, 0.2);
+      border-radius: $radius-sm;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: $text-muted;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: rgba($primary-dark-blue, 0.05);
+        color: $primary-dark-blue;
+        border-color: $primary-dark-blue;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: $white;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    
+    &.active {
+      right: 0;
+    }
+    
+    .mobileCTA {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  color: $primary-dark-blue;
+  z-index: 1000;
+  
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+  }
+}

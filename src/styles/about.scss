@@ -1,0 +1,17 @@
+.about {
+    display: flex;
+    padding: 50px;
+    gap: 30px;
+    .image img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    button {
+        margin-top: 10px;
+        background: #00bcd4;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: white;
+    }
+}

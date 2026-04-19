@@ -1,0 +1,19 @@
+.navbar {
+    .top-bar {
+        background: #0a1a2f;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 20px;
+    }
+    .nav-main {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+    }
+}

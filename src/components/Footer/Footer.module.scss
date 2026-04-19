@@ -1,0 +1,217 @@
+@use '../../styles/variables' as *;
+@use "sass:color";
+
+.footer {
+  background-color: $primary-dark-blue;
+  color: $white;
+  padding: $spacing-xl 0 $spacing-md;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0 $spacing-md;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  
+  @media (max-width: $breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand {
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    
+    img {
+      height: 48px;
+    }
+    
+    .logoPlaceholder {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.1);
+      color: $white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    
+    span {
+      font-family: $font-headings;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  
+  a {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $accent-gold;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.links {
+  h4 {
+    color: $white;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: $accent-gold;
+    }
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    li a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      &:hover {
+        color: $accent-gold;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.newsletter {
+  h4 {
+    color: $white;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: $accent-gold;
+    }
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  
+  input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: $radius-sm;
+    color: $white;
+    font-family: inherit;
+    
+    &:focus {
+      outline: none;
+      border-color: $accent-gold;
+    }
+  }
+  
+  button {
+    background: $accent-gold;
+    color: $white;
+    padding: 12px 20px;
+    border-radius: $radius-sm;
+    font-weight: 600;
+    
+    &:hover {
+      background: color.adjust($accent-gold, $lightness: -10%);
+    }
+  }
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: $spacing-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+  }
+  
+  .bottomLinks {
+    display: flex;
+    gap: 20px;
+    
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    text-align: center;
+  }
+}

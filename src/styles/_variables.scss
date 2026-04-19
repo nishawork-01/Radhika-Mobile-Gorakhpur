@@ -1,0 +1,33 @@
+// Colors
+$primary-dark-blue: #0a2342;
+$primary-teal: #20c997;
+$secondary-dark-blue: #123456;
+$accent-gold: #ffcc00;
+$accent-gold-soft: rgba(255, 204, 0, 0.1);
+$white: #ffffff;
+$light-gray: #f8f9fa;
+$text-dark: #2d3436;
+$text-muted: #636e72;
+
+// Typography
+$font-headings: 'Outfit', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 8rem;
+
+// Effects
+$shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+$shadow-bold: 0 20px 40px rgba(0, 0, 0, 0.1);
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+// Media Queries
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;

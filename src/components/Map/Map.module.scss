@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+
+.mapSection {
+  background-color: $light-gray;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: $spacing-xl;
+  align-items: center;
+  
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.infoCard {
+  background: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  box-shadow: $shadow-bold;
+  border-left: 5px solid $accent-gold;
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: $primary-dark-blue;
+  }
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  .icon {
+    color: $accent-gold;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  
+  h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    color: $text-muted;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+}
+
+.mapWrapper {
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-bold;
+  height: 450px;
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

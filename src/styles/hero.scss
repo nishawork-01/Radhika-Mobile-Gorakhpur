@@ -1,0 +1,27 @@
+.hero {
+    height: 80vh;
+    background: url("/hero.jpg") center/cover no-repeat;
+    margin: 20px;
+    border-radius: 20px;
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        .content {
+            color: white;
+            h1 {
+                font-size: 40px;
+            }
+            button {
+                margin-top: 15px;
+                padding: 10px 20px;
+                background: #00bcd4;
+                border: none;
+                border-radius: 20px;
+                color: white;
+            }
+        }
+    }
+}

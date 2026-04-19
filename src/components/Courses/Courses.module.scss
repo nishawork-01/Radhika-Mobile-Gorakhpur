@@ -1,0 +1,200 @@
+@use '../../styles/variables' as *;
+
+.courses {
+  background-color: $light-gray;
+  padding: $spacing-xl 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba($primary-dark-blue, 0.06);
+    color: $primary-dark-blue;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    svg { color: $accent-gold; }
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    color: $primary-dark-blue;
+    margin-bottom: 1rem;
+    font-family: $font-headings;
+    span { color: $accent-gold; }
+    @media (max-width: $breakpoint-tablet) { font-size: 2.2rem; }
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  
+  @media (max-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+    
+    .imageBox img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.popularCard {
+  border: 2px solid $accent-gold;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: $radius-lg;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.15);
+    pointer-events: none;
+  }
+}
+
+.popularBadge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, $accent-gold, #e6b800);
+  color: $primary-dark-blue;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 3px 12px rgba(255, 204, 0, 0.4);
+}
+
+.imageBox {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+}
+
+.badges {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.duration {
+  background: $primary-dark-blue;
+  color: $white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(10px);
+}
+
+.level {
+  background: rgba(255, 255, 255, 0.9);
+  color: $primary-dark-blue;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.content {
+  padding: 28px 24px;
+  
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: $primary-dark-blue;
+  }
+  
+  p {
+    color: $text-muted;
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    min-height: 52px;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $primary-dark-blue;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: rgba($accent-gold, 0.1);
+  border: none;
+  padding: 10px 20px;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: $accent-gold;
+    color: $primary-dark-blue;
+    gap: 12px;
+    transform: translateX(3px);
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+}

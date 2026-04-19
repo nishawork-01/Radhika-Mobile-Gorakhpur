@@ -1,0 +1,135 @@
+@use '../../styles/variables' as *;
+
+.services {
+  background-color: $white;
+  padding: $spacing-xl 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba($primary-dark-blue, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba($primary-dark-blue, 0.06);
+    color: $primary-dark-blue;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    svg { color: $accent-gold; }
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    color: $primary-dark-blue;
+    margin-bottom: 1rem;
+    font-family: $font-headings;
+    span { color: $accent-gold; }
+    @media (max-width: $breakpoint-tablet) { font-size: 2.2rem; }
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  
+  @media (max-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: 32px 24px;
+  background: $white;
+  border-radius: $radius-md;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, $accent-gold, #00d4ff);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+    
+    .iconBox {
+      background: linear-gradient(135deg, $accent-gold, #e6b800);
+      color: $primary-dark-blue;
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+  
+  .iconBox {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba($accent-gold, 0.1), rgba($accent-gold, 0.05));
+    color: $accent-gold;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    transition: all 0.4s ease;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: $primary-dark-blue;
+  }
+  
+  p {
+    color: $text-muted;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+}
