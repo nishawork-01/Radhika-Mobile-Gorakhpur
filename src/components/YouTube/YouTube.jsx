@@ -37,7 +37,7 @@ const YouTube = () => {
             </div>
             
             <a 
-              href="https://www.youtube.com/@radhikamobilegorakhpur" 
+              href="https://www.youtube.com/@radhikagmobilegorakhpur" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.ytBtn}
@@ -57,7 +57,7 @@ const YouTube = () => {
               <iframe 
                 width="100%" 
                 height="315" 
-                src="https://www.youtube.com/embed/videoseries?list=UU6z5tZ0t_9y9xG7p9K5rP9A" 
+                src="https://www.youtube.com/embed/tmo7TaOyFq0" 
                 title="Radhika Mobile Tutorials" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
