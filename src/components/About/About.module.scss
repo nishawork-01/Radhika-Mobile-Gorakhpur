@@ -5,6 +5,10 @@
   padding: $spacing-xl 0;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
 }
 
 .grid {
@@ -106,12 +110,28 @@
     color: rgba($primary-dark-blue, 0.7);
   }
   
-  @media (max-width: $breakpoint-mobile) {
-    bottom: 20px;
-    right: 20px;
-    padding: 15px;
-    span { font-size: 1.8rem; }
-    p { font-size: 0.65rem; }
+  @media (max-width: 992px) {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    margin: 30px auto 10px;
+    width: fit-content;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.2);
+    
+    span { 
+      font-size: 2rem; 
+      margin-bottom: 0;
+    }
+    p { 
+      font-size: 0.9rem; 
+      text-align: left;
+    }
   }
 }
 

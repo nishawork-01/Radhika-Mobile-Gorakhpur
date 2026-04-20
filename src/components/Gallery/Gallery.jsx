@@ -1,39 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Camera, Eye } from 'lucide-react';
+import { Camera, Eye, PlayCircle } from 'lucide-react';
 import styles from './Gallery.module.scss';
 
+// Import images
+import gallery1 from '../../assets/gallery1.jpg';
+import gallery2 from '../../assets/gallery2.jpg';
+import gallery3 from '../../assets/gallery3.jpg';
+import gallery4 from '../../assets/gallery4.jpg';
+
+// Import local videos
+import video1 from '../../assets/video1.mp4';
+import video2 from '../../assets/video2.mp4';
+import video3 from '../../assets/video3.mp4.mp4';
+
 const Gallery = () => {
-  const images = [
+  const mediaItems = [
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/1.png",
-      title: "Advanced PCB Tracing",
-      category: "Hardware"
+      url: gallery1,
+      title: "Hands-on Practical",
+      category: "Training",
+      type: "image"
     },
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/2.png",
-      title: "Microscope Repairing",
-      category: "Lab Work"
+      url: gallery1,
+      videoUrl: video1,
+      title: "Advanced Lab Training",
+      category: "Workshop",
+      type: "video"
     },
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/3.png",
-      title: "IC Level Hardware Repair",
-      category: "Training"
+      url: gallery2,
+      title: "Advanced Tools Setup",
+      category: "Lab",
+      type: "image"
     },
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/6.png",
-      title: "Digital Logic Board Testing",
-      category: "Diagnostics"
+      url: gallery2,
+      videoUrl: video2,
+      title: "Micro-soldering Work",
+      category: "Hardware",
+      type: "video"
     },
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/5.png",
-      title: "Software Flashing & Unlock",
-      category: "Software"
+      url: gallery3,
+      title: "Success Celebration",
+      category: "Academy",
+      type: "image"
     },
     {
-      url: "https://radhikamobile.com/wp-content/uploads/2025/04/4.png",
-      title: "Complete Screen Replacement",
-      category: "Hardware"
+      url: gallery3,
+      videoUrl: video3,
+      title: "Live Training Session",
+      category: "Classroom",
+      type: "video",
+      rotated: true // Applying rotation as requested
     }
   ];
 
@@ -57,7 +78,7 @@ const Gallery = () => {
         </motion.div>
         
         <div className={styles.grid}>
-          {images.map((img, index) => (
+          {mediaItems.map((item, index) => (
             <motion.div 
               key={index}
               className={styles.item}
@@ -66,14 +87,26 @@ const Gallery = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <img src={img.url} alt={img.title} loading="lazy" />
+              {item.type === 'video' ? (
+                <video 
+                  src={item.videoUrl} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className={`${styles.video} ${item.rotated ? styles.rotated : ''}`}
+                />
+              ) : (
+                <img src={item.url} alt={item.title} loading="lazy" />
+              )}
+              
               <div className={styles.overlay}>
                 <div className={styles.overlayContent}>
                   <div className={styles.iconCircle}>
-                    <Eye size={22} />
+                    {item.type === 'video' ? <PlayCircle size={28} /> : <Eye size={22} />}
                   </div>
-                  <span className={styles.category}>{img.category}</span>
-                  <h4>{img.title}</h4>
+                  <span className={styles.category}>{item.category}</span>
+                  <h4>{item.title}</h4>
                 </div>
               </div>
             </motion.div>

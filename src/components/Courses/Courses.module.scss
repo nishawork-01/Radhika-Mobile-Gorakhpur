@@ -3,6 +3,10 @@
 .courses {
   background-color: $light-gray;
   padding: $spacing-xl 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
 }
 
 .sectionHeader {
@@ -53,9 +57,8 @@
   }
   
   @media (max-width: $breakpoint-tablet) {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 

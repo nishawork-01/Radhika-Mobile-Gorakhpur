@@ -7,6 +7,10 @@
   position: relative;
   overflow: hidden;
   
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
+  
   // Decorative gradient orbs
   &::before {
     content: '';

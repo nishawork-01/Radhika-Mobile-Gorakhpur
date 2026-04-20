@@ -7,7 +7,7 @@
   padding: $spacing-xl 0 $spacing-md;
   
   @media (max-width: $breakpoint-tablet) {
-    padding: $spacing-lg 0 $spacing-md;
+    padding: 3rem 0 $spacing-md;
   }
 }
 
@@ -24,6 +24,8 @@
   
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
   }
 }
 

@@ -44,7 +44,7 @@ const MediaSection = () => {
             
             <div className={styles.videoWrapper}>
               <iframe 
-                src="https://www.youtube.com/embed/tmo7TaOyFq0" 
+                src="https://www.youtube.com/embed/0XFa4-av_J8" 
                 title="Radhika Mobile Tutorials" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -68,18 +68,27 @@ const MediaSection = () => {
               </div>
               <div>
                 <h3>Our Location</h3>
-                <p>Vijay Chowk, Khoya Mandi Gali, Golghar, Gorakhpur, UP - 273001</p>
+                <p>Vijay Chowk, Golghar, Gorakhpur, Uttar Pradesh 273001, India</p>
               </div>
             </div>
             
             <div className={styles.mapWrapper}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.024843948767!2d83.3687399752174!3d26.746014976747283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399145610ec16301%3A0xe7bf40049909241b!2sRadhika%20Mobile%20Training%20Institute!5e0!3m2!1sen!2sin!4v1713220000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.633684129133!2d83.3676349133!3d26.7560634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399145ddcc416d81%3A0xa63b5f9c11d873e4!2sRadhika%20Mobile%20Gorakhpur!5e0!3m2!1sen!2sin!4v1776667947574!5m2!1sen!2sin" 
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Radhika Mobile Location"
               ></iframe>
+              <a 
+                href="https://maps.app.goo.gl/wHAcUvGHrnPrUbc2A" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.mapMarker}
+              >
+                <MapPin size={32} />
+                <span className={styles.pulse}></span>
+              </a>
             </div>
           </motion.div>
         </div>

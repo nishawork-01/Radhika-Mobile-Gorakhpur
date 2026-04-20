@@ -4,6 +4,10 @@
   background: linear-gradient(180deg, $light-gray 0%, #edf2f7 100%);
   padding: $spacing-xl 0;
   position: relative;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
 }
 
 .sectionHeader {

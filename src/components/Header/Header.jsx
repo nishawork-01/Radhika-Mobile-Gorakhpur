@@ -26,8 +26,8 @@ const Header = ({ onEnrollClick, onLogout }) => {
               <a href="tel:+919415158402">
                 <Phone size={14} /> +91-94151-58402
               </a>
-              <a href="mailto:deepakgkiran@gmail.com">
-                <Mail size={14} /> deepakgkiran@gmail.com
+              <a href="mailto:radhikamobilegorakhpur@gmail.com">
+                <Mail size={14} /> radhikamobilegorakhpur@gmail.com
               </a>
             </div>
             <div className={styles.socialLinks}>

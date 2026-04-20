@@ -43,7 +43,7 @@ const Contact = () => {
                 <div className={styles.icon}><Mail size={20} /></div>
                 <div>
                   <h4>Email Us</h4>
-                  <p>deepakgkiran@gmail.com</p>
+                  <p>radhikamobilegorakhpur@gmail.com</p>
                 </div>
               </div>
               <div className={styles.item}>
@@ -57,7 +57,7 @@ const Contact = () => {
                 <div className={styles.icon}><MapPin size={20} /></div>
                 <div>
                   <h4>Visit Us</h4>
-                  <p>Vijay Chowk, In Front of Hotel San Plaza, Khoya Mandi Gali, Golghar, Gorakhpur, UP - 273001</p>
+                  <p>Vijay Chowk, Golghar, Gorakhpur, Uttar Pradesh 273001, India</p>
                 </div>
               </div>
             </div>

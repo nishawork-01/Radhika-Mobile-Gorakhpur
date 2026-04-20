@@ -5,6 +5,10 @@
   padding: $spacing-xl 0;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
 }
 
 .bgPattern {
