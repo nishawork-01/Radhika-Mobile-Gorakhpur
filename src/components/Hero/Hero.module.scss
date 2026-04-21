@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 100px 0 40px;
+  padding: 130px 0 40px;
   overflow: hidden;
   background-color: #000b18;
 
@@ -37,8 +37,9 @@
 .blurOrb1 {
   position: absolute;
   top: 10%;
-  left: -10%;
-  width: 500px;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba($accent-gold, 0.08) 0%, transparent 70%);
   filter: blur(80px);
@@ -49,8 +50,9 @@
 .blurOrb2 {
   position: absolute;
   bottom: 0%;
-  right: -5%;
-  width: 400px;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
   height: 400px;
   background: radial-gradient(circle, rgba($primary-teal, 0.05) 0%, transparent 70%);
   filter: blur(80px);
@@ -232,6 +234,13 @@ h1 {
   border-radius: 50px;
   backdrop-filter: blur(5px);
   
+  @media (max-width: $breakpoint-mobile) {
+    padding: 8px 14px;
+    gap: 8px;
+    flex: 1 1 130px;
+    justify-content: center;
+  }
+
   .pillIcon {
     color: $accent-gold;
     display: flex;
@@ -246,6 +255,9 @@ h1 {
     font-weight: 800;
     font-size: 1.1rem;
     line-height: 1;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 0.95rem;
+    }
   }
   
   .pillLabel {
@@ -253,6 +265,9 @@ h1 {
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 0.6rem;
+    }
   }
 }
 
@@ -317,13 +332,13 @@ h1 {
 .floatingBadge1 {
   top: 20%;
   left: -40px;
-  @media (max-width: $breakpoint-mobile) { left: 0; }
+  @media (max-width: $breakpoint-tablet) { left: 10px; }
 }
 
 .floatingBadge2 {
   bottom: 15%;
   right: -40px;
-  @media (max-width: $breakpoint-mobile) { right: 0; }
+  @media (max-width: $breakpoint-tablet) { right: 10px; }
 }
 
 .experienceYear {

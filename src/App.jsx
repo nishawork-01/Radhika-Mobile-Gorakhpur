@@ -72,10 +72,10 @@ function App() {
       <Header onEnrollClick={() => handleEnrollClick()} onLogout={closeAllModals} />
       <main>
         <Hero onEnrollClick={() => handleEnrollClick()} />
-        <Services />
         <About />
-        <Courses onEnrollClick={handleEnrollClick} />
+        <Services />
         <WhyChooseUs />
+        <Courses onEnrollClick={handleEnrollClick} />
         <MediaSection />
         <Gallery />
         <Testimonial />
