@@ -27,4 +27,4 @@ This document tracks all the changes, deployments, and updates made to the Radhi
 
 ### 4. Testimonial Avatars Fix
 - **Action**: Fixed broken avatar images in the Testimonials section.
-- **Details**: Replaced the broken `radhikamobile.com` image URLs with dynamic UI Avatars (`ui-avatars.com`) that automatically generate professional initial-based profile pictures (e.g., 'R' for Rahul).
+- **Details**: Initially used UI Avatars, but as per user request, updated the avatars to use real images of institute members (`about1.png`, `about2.png`, `about3.png`) from the website's assets directory.

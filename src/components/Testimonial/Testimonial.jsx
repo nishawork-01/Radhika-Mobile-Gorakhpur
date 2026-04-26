@@ -2,27 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, GraduationCap } from 'lucide-react';
 import styles from './Testimonial.module.scss';
+import student1 from '../../assets/about1.png';
+import student2 from '../../assets/about2.png';
+import student3 from '../../assets/about3.png';
 
 const Testimonial = () => {
   const testimonials = [
     {
       name: "Rahul Sharma",
       course: "Advance IC Level Training",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=faces",
+      image: student1,
       text: "The practical training here is amazing. I learned deep motherboard tracing and IC reballing within just a few weeks. Now I run my own fully functional repair shop with confidence.",
       rating: 5
     },
     {
       name: "Vikas Singh",
       course: "Complete Hardware & Software",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
+      image: student2,
       text: "Best mobile training institute in Gorakhpur! Sir's teaching method is very easy to understand, especially the dead mobile boot sequence logic and software flashing.",
       rating: 5
     },
     {
       name: "Amit Yadav",
       course: "Smartphone Diagnostics",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
+      image: student3,
       text: "I joined with zero knowledge, but after the live practical classes, I can fix network issues, display problems, and short circuits easily. Highly recommended!",
       rating: 5
     }
