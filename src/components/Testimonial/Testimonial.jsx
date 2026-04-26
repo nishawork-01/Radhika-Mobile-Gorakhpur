@@ -8,21 +8,21 @@ const Testimonial = () => {
     {
       name: "Rahul Sharma",
       course: "Advance IC Level Training",
-      image: "https://radhikamobile.com/wp-content/uploads/2025/04/1-2.png",
+      image: "https://ui-avatars.com/api/?name=Rahul+Sharma&background=ffd700&color=000",
       text: "The practical training here is amazing. I learned deep motherboard tracing and IC reballing within just a few weeks. Now I run my own fully functional repair shop with confidence.",
       rating: 5
     },
     {
       name: "Vikas Singh",
       course: "Complete Hardware & Software",
-      image: "https://radhikamobile.com/wp-content/uploads/2025/04/2-2.png",
+      image: "https://ui-avatars.com/api/?name=Vikas+Singh&background=ffd700&color=000",
       text: "Best mobile training institute in Gorakhpur! Sir's teaching method is very easy to understand, especially the dead mobile boot sequence logic and software flashing.",
       rating: 5
     },
     {
       name: "Amit Yadav",
       course: "Smartphone Diagnostics",
-      image: "https://radhikamobile.com/wp-content/uploads/2025/04/3-2.png",
+      image: "https://ui-avatars.com/api/?name=Amit+Yadav&background=ffd700&color=000",
       text: "I joined with zero knowledge, but after the live practical classes, I can fix network issues, display problems, and short circuits easily. Highly recommended!",
       rating: 5
     }

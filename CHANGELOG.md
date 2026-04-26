@@ -24,3 +24,7 @@ This document tracks all the changes, deployments, and updates made to the Radhi
 ### 3. Social Media Link Sharing Update
 - **Action**: Added Open Graph Meta Tags.
 - **Details**: Inserted meta tags in index.html to ensure title and logo display properly when shared on WhatsApp, Facebook, etc.
+
+### 4. Testimonial Avatars Fix
+- **Action**: Fixed broken avatar images in the Testimonials section.
+- **Details**: Replaced the broken `radhikamobile.com` image URLs with dynamic UI Avatars (`ui-avatars.com`) that automatically generate professional initial-based profile pictures (e.g., 'R' for Rahul).
