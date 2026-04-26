@@ -20,3 +20,7 @@ This document tracks all the changes, deployments, and updates made to the Radhi
   - Verified the `favicon.png` and `manifest.json` configurations to ensure the website logo appears correctly in Google Search results.
   - Created a new build and successfully deployed the changes to Firebase.
   - Committed and pushed these updates to GitHub.
+
+### 3. Social Media Link Sharing Update
+- **Action**: Added Open Graph Meta Tags.
+- **Details**: Inserted meta tags in index.html to ensure title and logo display properly when shared on WhatsApp, Facebook, etc.
