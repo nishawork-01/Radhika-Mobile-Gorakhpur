@@ -19,7 +19,7 @@ const About = () => {
     <section id="about" className={styles.about}>
       <div className="container">
         <div className={styles.grid}>
-          <motion.div 
+          <motion.div
             className={styles.imageGridWrapper}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,8 +37,8 @@ const About = () => {
               <p>Years of Expertise</p>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className={styles.content}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -51,12 +51,12 @@ const About = () => {
             </div>
             <h2>Leading Mobile Repairing Institute in <span className={styles.highlight}>Gorakhpur</span></h2>
             <p>
-              Radhika Mobile Institute is a premier technical training center dedicated to 
-              empowering individuals with the skills needed to excel in the mobile 
-              telecommunications industry. We provide comprehensive training from 
+              Radhika Mobile Institute is a premier technical training center dedicated to
+              empowering individuals with the skills needed to excel in the mobile
+              telecommunications industry. We provide comprehensive training from
               basic troubleshooting to advanced motherboard chip-level repairing.
             </p>
-            
+
             <ul className={styles.features}>
               {features.map((feature, index) => (
                 <li key={index}>
@@ -65,7 +65,7 @@ const About = () => {
                 </li>
               ))}
             </ul>
-            
+
             <a href="#courses" className="btn-primary">Explore Our Courses</a>
           </motion.div>
         </div>

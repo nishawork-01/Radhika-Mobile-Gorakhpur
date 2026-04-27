@@ -13,7 +13,7 @@ const Courses = ({ onEnrollClick }) => {
       description: "Learn fundamental troubleshooting, hardware replacement, and basic circuit understanding.",
       image: basicImg,
       duration: "45 Days",
-      level: "Beginner",
+      //level: "Beginner",
       popular: false
     },
     {
@@ -21,7 +21,7 @@ const Courses = ({ onEnrollClick }) => {
       description: "Master micro-soldering, IC reballing, and complex motherboard diagnostics using advanced tools.",
       image: advancedImg,
       duration: "90 Days",
-      level: "Advanced",
+      //level: "Advanced",
       popular: true
     },
     {
@@ -29,7 +29,7 @@ const Courses = ({ onEnrollClick }) => {
       description: "Flashing, unlocking, dead boot repair, and FRP bypass for all major Android & iOS devices.",
       image: softwareImg,
       duration: "30 Days",
-      level: "Intermediate",
+      //level: "Intermediate",
       popular: false
     }
   ];
@@ -52,10 +52,10 @@ const Courses = ({ onEnrollClick }) => {
           <h2>Our Professional <span>Courses</span></h2>
           <p>Choose the right program to kickstart your career in the mobile service industry.</p>
         </motion.div>
-        
+
         <div className={styles.grid}>
           {courses.map((course, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className={`${styles.card} ${course.popular ? styles.popularCard : ''}`}
               initial={{ opacity: 0, y: 30 }}
@@ -70,15 +70,17 @@ const Courses = ({ onEnrollClick }) => {
               )}
               <div className={styles.imageBox}>
                 <img src={course.image} alt={course.title} />
-                <div className={styles.badges}>
-                  <span className={styles.level}>{course.level}</span>
-                </div>
+                {course.level && (
+                  <div className={styles.badges}>
+                    <span className={styles.level}>{course.level}</span>
+                  </div>
+                )}
               </div>
               <div className={styles.content}>
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
-                <button 
-                  onClick={() => onEnrollClick && onEnrollClick(course.title)} 
+                <button
+                  onClick={() => onEnrollClick && onEnrollClick(course.title)}
                   className={styles.link}
                 >
                   Enroll Now <ArrowRight size={16} />

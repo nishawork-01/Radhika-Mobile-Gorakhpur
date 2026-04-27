@@ -28,3 +28,13 @@ This document tracks all the changes, deployments, and updates made to the Radhi
 ### 4. Testimonial Avatars Fix
 - **Action**: Fixed broken avatar images in the Testimonials section.
 - **Details**: Initially used UI Avatars, but as per user request, updated the avatars to use real images of institute members (`about1.png`, `about2.png`, `about3.png`) from the website's assets directory.
+
+## Date: April 27, 2026
+
+### 1. UI Fixes & Media Adjustments
+- **Action**: Corrected UI glitches and video positioning.
+- **Details**:
+  - Removed an empty white badge box on course cards by conditionally rendering the level element in `Courses.jsx`.
+  - Fixed video rotation (270 degrees) and framing for sideways videos in the Gallery section (`Gallery.jsx` and `Gallery.module.scss`).
+  - Updated student details and student images in the Testimonial component.
+  - Minor text adjustments in the About component.

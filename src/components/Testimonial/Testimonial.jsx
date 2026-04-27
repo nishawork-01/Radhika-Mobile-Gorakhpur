@@ -2,28 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, GraduationCap } from 'lucide-react';
 import styles from './Testimonial.module.scss';
-import student1 from '../../assets/about1.png';
-import student2 from '../../assets/about2.png';
-import student3 from '../../assets/about3.png';
+import student1 from '../../assets/Student1.png';
+import student2 from '../../assets/Student2.png';
+import student3 from '../../assets/Student3.png';
 
 const Testimonial = () => {
   const testimonials = [
     {
-      name: "Rahul Sharma",
+      name: "Deen Dayal",
       course: "Advance IC Level Training",
       image: student1,
       text: "The practical training here is amazing. I learned deep motherboard tracing and IC reballing within just a few weeks. Now I run my own fully functional repair shop with confidence.",
       rating: 5
     },
     {
-      name: "Vikas Singh",
+      name: "Rustam",
       course: "Complete Hardware & Software",
       image: student2,
       text: "Best mobile training institute in Gorakhpur! Sir's teaching method is very easy to understand, especially the dead mobile boot sequence logic and software flashing.",
       rating: 5
     },
     {
-      name: "Amit Yadav",
+      name: "Krishna Mahato",
       course: "Smartphone Diagnostics",
       image: student3,
       text: "I joined with zero knowledge, but after the live practical classes, I can fix network issues, display problems, and short circuits easily. Highly recommended!",
@@ -35,8 +35,8 @@ const Testimonial = () => {
     <section id="testimonials" className={styles.testimonialSection}>
       <div className={styles.bgPattern}></div>
       <div className="container">
-        
-        <motion.div 
+
+        <motion.div
           className={styles.sectionHeader}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const Testimonial = () => {
 
         <div className={styles.grid}>
           {testimonials.map((review, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className={styles.card}
               initial={{ opacity: 0, y: 40 }}
@@ -64,7 +64,7 @@ const Testimonial = () => {
               <div className={styles.quoteIcon}>
                 <Quote size={40} />
               </div>
-              
+
               <div className={styles.content}>
                 <div className={styles.stars}>
                   {[...Array(review.rating)].map((_, i) => (
