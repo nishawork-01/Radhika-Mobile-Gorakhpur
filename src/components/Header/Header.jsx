@@ -74,7 +74,10 @@ const Header = ({ onEnrollClick, onLogout }) => {
                   {logo ? <img src={logo} alt="Logo" /> : <span>RM</span>}
                   <span>Radhika Mobile</span>
                 </div>
-                <button className={styles.closeBtn} onClick={() => setIsMenuOpen(false)}>
+                <button className={styles.closeBtn} onClick={() => {
+                  setIsMenuOpen(false);
+                  window.dispatchEvent(new CustomEvent('mobileMenuClose'));
+                }}>
                   <X size={28} strokeWidth={2.5} />
                 </button>
               </div>
@@ -139,7 +142,11 @@ const Header = ({ onEnrollClick, onLogout }) => {
 
             <button 
               className={styles.menuToggle} 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                const next = !isMenuOpen;
+                setIsMenuOpen(next);
+                window.dispatchEvent(new CustomEvent(next ? 'mobileMenuOpen' : 'mobileMenuClose'));
+              }}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

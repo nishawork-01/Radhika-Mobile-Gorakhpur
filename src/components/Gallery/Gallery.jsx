@@ -55,7 +55,7 @@ const Gallery = () => {
       title: "Live Training Session",
       category: "Classroom",
       type: "video",
-      //rotated: true // Applying rotation as requested
+      //rotated: true
     }
   ];
 
@@ -91,6 +91,7 @@ const Gallery = () => {
               {item.type === 'video' ? (
                 <video
                   src={item.videoUrl}
+                  poster={item.url}
                   autoPlay
                   loop
                   muted

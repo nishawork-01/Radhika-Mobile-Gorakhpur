@@ -130,7 +130,7 @@ const Hero = ({ onEnrollClick }) => {
           >
             <div className={styles.glassCard}>
               <div className={styles.cardGlow}></div>
-              <img src={heroBg} alt="Advanced Mobile Training" className={styles.heroImage} />
+              <img src={heroBg} alt="Advanced Mobile Training" className={styles.heroImage} loading="eager" />
               
               {/* Floating Tech Elements */}
               <motion.div 

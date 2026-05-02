@@ -115,8 +115,9 @@
   .iconBox {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, rgba($accent-gold, 0.1), rgba($accent-gold, 0.05));
+    background: linear-gradient(135deg, rgba($accent-gold, 0.2), rgba($accent-gold, 0.15));
     color: $accent-gold;
+    border: 1px solid rgba($accent-gold, 0.2);
     border-radius: 16px;
     display: flex;
     align-items: center;

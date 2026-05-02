@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Home-Radhika Mobile Training Institute Gorakhpur</title>
   <meta name="description"
     content="Join Radhika Mobile Training Institute for professional mobile repairing courses in Gorakhpur. Learn chip-level repairing with hands-on practice." />
@@ -20,6 +21,175 @@
 
 <body>
   <div id="root"></div>
+  
+  <!-- Hidden Google Translate Element (must not be display:none or Google won't init) -->
+  <div id="google_translate_element" style="position:absolute; left:-9999px; top:-9999px; visibility:hidden;"></div>
+
+
+
+  <!-- Custom Language Toggle Button -->
+  <div id="lang-widget" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">
+
+    <!-- Popup Menu -->
+    <div id="lang-popup" style="
+      display: none;
+      position: absolute;
+      top: 56px;
+      right: 0;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      border: 2px solid #FFD700;
+      overflow: hidden;
+      min-width: 140px;
+      animation: fadeDown 0.2s ease;
+    ">
+      <button onclick="setLang('en')" style="
+        display: flex; align-items: center; gap: 10px;
+        width: 100%; padding: 11px 18px;
+        background: none; border: none; cursor: pointer;
+        font-size: 14px; font-weight: 600; color: #003366;
+        transition: background 0.2s;
+      " onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='none'">
+        &#127464;&#127475; &nbsp;English
+      </button>
+      <div style="height:1px; background:#f0f0f0;"></div>
+      <button onclick="setLang('hi')" style="
+        display: flex; align-items: center; gap: 10px;
+        width: 100%; padding: 11px 18px;
+        background: none; border: none; cursor: pointer;
+        font-size: 14px; font-weight: 600; color: #003366;
+        transition: background 0.2s;
+      " onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='none'">
+        &#127470;&#127475; &nbsp;Hindi
+      </button>
+    </div>
+
+    <!-- Rotate Icon Button -->
+    <button id="lang-btn" onclick="toggleLangPopup()" title="Change Language" style="
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2.5px solid #FFD700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    " onmouseover="this.style.boxShadow='0 6px 20px rgba(0,51,102,0.25)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(0,0,0,0.18)'">
+      <i class="fa-solid fa-rotate" style="font-size: 20px; color: #003366;"></i>
+    </button>
+  </div>
+
+  <style>
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tablet/Mobile Adjustments for Language Widget */
+    @media (max-width: 900px) {
+      #lang-widget {
+        top: 15px !important;
+        right: 75px !important;
+      }
+      #lang-widget #lang-btn {
+        width: 44px !important;
+        height: 44px !important;
+      }
+      #lang-widget #lang-btn i {
+        font-size: 18px !important;
+      }
+      #lang-widget #lang-popup {
+        top: 52px !important;
+      }
+    }
+
+    /* Hide ALL Google branding and top bar */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-logo-link,
+    .goog-te-gadget img {
+      display: none !important;
+    }
+    .goog-te-gadget {
+      font-size: 0 !important;
+      color: transparent !important;
+    }
+    .goog-te-gadget span {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    iframe.skiptranslate {
+      display: none !important;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        'google_translate_element'
+      );
+    }
+
+    function toggleLangPopup() {
+      var popup = document.getElementById('lang-popup');
+      var btn   = document.getElementById('lang-btn');
+      var isOpen = popup.style.display === 'block';
+      popup.style.display = isOpen ? 'none' : 'block';
+      btn.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    function setLang(lang) {
+      // Cookie-based approach — most reliable with hidden widgets
+      var domain = window.location.hostname;
+      var cookieVal = lang === 'en' ? '/en/en' : '/en/' + lang;
+      // Set for current domain and without domain (localhost support)
+      document.cookie = 'googtrans=' + cookieVal + '; path=/';
+      document.cookie = 'googtrans=' + cookieVal + '; path=/; domain=' + domain;
+      document.getElementById('lang-popup').style.display = 'none';
+      document.getElementById('lang-btn').style.transform = 'rotate(0deg)';
+      // Reload so Google Translate reads the cookie
+      window.location.reload();
+    }
+
+    // Close popup when clicking outside
+    document.addEventListener('click', function(e) {
+      var widget = document.getElementById('lang-widget');
+      if (widget && !widget.contains(e.target)) {
+        document.getElementById('lang-popup').style.display = 'none';
+        document.getElementById('lang-btn').style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Mobile sidebar open hone par language icon hide karo
+    window.addEventListener('mobileMenuOpen', function() {
+      if (window.innerWidth <= 900) {
+        var widget = document.getElementById('lang-widget');
+        if (widget) {
+          widget.style.opacity = '0';
+          widget.style.pointerEvents = 'none';
+          widget.style.transition = 'opacity 0.2s ease';
+        }
+      }
+    });
+
+    // Mobile sidebar close hone par language icon wapas dikhao
+    window.addEventListener('mobileMenuClose', function() {
+      var widget = document.getElementById('lang-widget');
+      if (widget) {
+        widget.style.opacity = '1';
+        widget.style.pointerEvents = 'auto';
+        widget.style.transition = 'opacity 0.3s ease';
+        // Popup bhi band karo agar khula ho
+        document.getElementById('lang-popup').style.display = 'none';
+        document.getElementById('lang-btn').style.transform = 'rotate(0deg)';
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script type="module" src="src/main.jsx"></script>
 </body>
 
